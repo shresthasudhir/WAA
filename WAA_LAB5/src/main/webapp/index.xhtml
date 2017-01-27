@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>#{msgs.title_Home}</title>
+<h:outputStylesheet library="css" name="styles.css"/>
+</h:head>
+<h:body>
+	<h1>#{msgs.label_Home}</h1>
+	<p><h:link value="#{msgs.labelAdd}" outcome="addName" /> |
+	<h:link value="#{msgs.labelEdit}" outcome="editName" /> | 
+	<h:link value="#{msgs.labelDelete}" outcome="deleteName" /></p>
+	
+	
+         <h:dataTable value="#{tableData.names}" var="my_name" styleClass="names"
+         headerClass="namesHeader" columnClasses="first,last">
+         
+         <h:column>
+               <f:facet name="header">
+                  <h:outputText value="#{msgs.firstnameColumn}" 
+                                style="font-weight: bold"/>
+               </f:facet>
+               
+               <h:outputText value="#{my_name.first}" />
+            </h:column>
+            
+            <h:column>
+               <f:facet name="header">
+                  <h:outputText value="#{msgs.lastnameColumn}" 
+                                style="font-weight: bold"/>
+               </f:facet>
+              
+               <h:outputText value="#{my_name.last}" />
+            </h:column>
+            
+         </h:dataTable>
+         
+      
+	
+</h:body>
+</html>

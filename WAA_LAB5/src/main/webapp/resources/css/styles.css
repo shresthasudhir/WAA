@@ -1,0 +1,34 @@
+.names {
+   border: thin solid black;
+}
+.namesHeader {
+   text-align: center;
+   font-style: italic;
+   color: Snow;
+   background: #0087e2;
+}
+.last {
+   height: 25px;
+   text-align: center;
+   background: #e09d63;
+}
+.first {
+   text-align: left;
+   background: #e09d63;
+   text-align: center;
+}
+.mid{
+	text-align: center;
+   background: #e09d63;
+   text-align: center;
+}
+
+h1{
+	font-family: fantasy;
+	color: Blue;
+}
+
+body{
+	background-color: #f3f9fe;
+	
+}

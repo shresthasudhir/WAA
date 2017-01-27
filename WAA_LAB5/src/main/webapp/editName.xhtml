@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://java.sun.com/jsf/html">
+   <h:head>
+      <title>#{msgs.windowTitle}</title>
+      <h:outputStylesheet library="css" name="styles.css"/>
+   </h:head>
+   <h:body>
+   <h1>#{msgs.editColumn}</h1>
+      <h:form>
+         <h:dataTable value="#{tableData.names}" var="my_name" styleClass="names"
+         headerClass="namesHeader" columnClasses="first,mid,last">
+            <h:column>
+               <f:facet name="header">
+                  <h:outputText value="#{msgs.editColumn}" 
+                                style="font-weight: bold"/>
+               </f:facet>
+               <h:selectBooleanCheckbox value="#{my_name.editable}" onclick="submit()"/>
+            </h:column>
+            <h:column>
+               <f:facet name="header">
+                  <h:outputText value="#{msgs.firstnameColumn}" 
+                                style="font-weight: bold"/>
+               </f:facet>
+               <h:inputText value="#{my_name.first}" rendered="#{my_name.editable}" 
+                            size="10"/>
+               <h:outputText value="#{my_name.first}" rendered="#{not my_name.editable}"/>
+            </h:column>
+            <h:column>
+               <f:facet name="header">
+                  <h:outputText value="#{msgs.lastnameColumn}" 
+                                style="font-weight: bold"/>
+               </f:facet>
+               <h:inputText value="#{my_name.last}" rendered="#{my_name.editable}" 
+                            size="10"/>
+               <h:outputText value="#{my_name.last}" rendered="#{not my_name.editable}"/>
+            </h:column>
+            
+         </h:dataTable>
+         <h:commandButton value="#{msgs.saveChangesButtonText}" 
+                          action="#{tableData.save}"/>
+      </h:form>
+      <p><h:link value="Home" outcome="index" /></p>
+   </h:body>
+</html>

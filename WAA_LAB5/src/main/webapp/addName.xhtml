@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core" 
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>#{msgs.windowTitleAdd}</title>
+<h:outputStylesheet library="css" name="styles.css"/>
+</h:head>
+<h:body>
+	<h1>#{msgs.addColumn}</h1>
+	<h:form>
+		<table>
+			<tr>
+				<td><h:outputText value="#{msgs.labelFirstName}" /></td>
+				<td><h:inputText value="#{tableData.name.first}" size="10" /></td>
+			</tr>
+			<tr>
+				<td><h:outputText value="#{msgs.labelLastName}" /></td>
+				<td><h:inputText value="#{tableData.name.last}" size="10" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><h:commandButton value="#{msgs.btnLabelAdd}" action="#{tableData.addName}"/></td>
+			</tr>
+		</table>
+	
+	</h:form>
+	<p><h:link value="Home" outcome="index" /></p>
+</h:body>
+</html>
